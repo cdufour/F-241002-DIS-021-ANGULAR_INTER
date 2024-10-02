@@ -1,0 +1,23 @@
+<h1>Application {{ title }}</h1>
+<p>Formation à distance</p>
+<p>{{ title }}</p>
+
+<!-- property binding -->
+<input type="hidden" value="{{ title }}" />
+<input type="hidden" [value]="'toto => ' + title" />
+
+<p>2 + 2 = {{ 2 + 2 }}</p>
+<p>2 > 1 ? : {{ 2 > 1 ? 'vrai' : 'faux' }}</p>
+
+<p>
+  <a href="https://fr.wikipedia.org/wiki/{{title}}">{{ title }}</a>
+</p>
+
+<div>
+  <button onClick="console.log('ok')">Test</button>
+  <button (click)="onClick()">Test</button>
+</div>
+
+<app-child></app-child>
+<app-child></app-child>
+<app-child></app-child>
