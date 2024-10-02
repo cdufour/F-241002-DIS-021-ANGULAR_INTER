@@ -1,23 +1,33 @@
-<h1>Application {{ title }}</h1>
-<p>Formation à distance</p>
-<p>{{ title }}</p>
+<h1 (click)="visible = !visible">Application {{ title }}</h1>
 
-<!-- property binding -->
-<input type="hidden" value="{{ title }}" />
-<input type="hidden" [value]="'toto => ' + title" />
+<div *ngIf="visible">
+  <p>Formation à distance</p>
+  <p>{{ title }}</p>
 
-<p>2 + 2 = {{ 2 + 2 }}</p>
-<p>2 > 1 ? : {{ 2 > 1 ? 'vrai' : 'faux' }}</p>
+  <!-- property binding -->
+  <input type="hidden" value="{{ title }}" />
+  <input type="hidden" [value]="'toto => ' + title" />
 
-<p>
-  <a href="https://fr.wikipedia.org/wiki/{{title}}">{{ title }}</a>
-</p>
+  <p>2 + 2 = {{ 2 + 2 }}</p>
+  <p>2 > 1 ? : {{ 2 > 1 ? 'vrai' : 'faux' }}</p>
 
-<div>
-  <button onClick="console.log('ok')">Test</button>
-  <button (click)="onClick()">Test</button>
+  <p>
+    <a href="https://fr.wikipedia.org/wiki/{{title}}">{{ title }}</a>
+  </p>
+
+  <div>
+    <button onClick="console.log('ok')">Test</button>
+    <button (click)="onClick()">Test</button>
+  </div>
+
+  <p *ngFor="let student of students; index as i">
+    {{ i + 1 }}/ {{ student }}
+  </p>
+
+  <app-child></app-child>
+
 </div>
 
-<app-child></app-child>
-<app-child></app-child>
-<app-child></app-child>
+
+
+
