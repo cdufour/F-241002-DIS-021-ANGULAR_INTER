@@ -2,11 +2,12 @@ import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { ChildComponent } from './child/child.component';
 import { NgFor, NgIf } from '@angular/common';
+import { ExosModule } from './exos/exos.module';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, ChildComponent, NgIf, NgFor],
+  imports: [RouterOutlet, ChildComponent, NgIf, NgFor, ExosModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

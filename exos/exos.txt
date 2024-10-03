@@ -8,3 +8,5 @@ Exemples de citation:
 "La femme est l'avenir de l'homme" (Aragon)
 "The world is yours" (Toni Montana)
 "Ad astra per aspera" (Inconnu)
+
+Tip: setInterval
