@@ -1,4 +1,4 @@
-Exo QuoteComponent
+1. Exo QuoteComponent
 Créer un composant "quote" qui affichera une citation et son auteur.
 Cet affichage se fera de façon aléatoire ou bien séquencielle 
 (le premier élément, puis le second, etc.), à intervale régulier (toutes les 10 secondes).
@@ -10,3 +10,17 @@ Exemples de citation:
 "Ad astra per aspera" (Inconnu)
 
 Tip: setInterval
+
+
+
+2. Créer 1 composant city-choice proposant un menu déroulant listant
+des villes (ex: Turin, Rio, etc.)
+Lorsque l'utilisateur choisit une ville, devront apparaître dans le DOM:
+- 1 photo de la ville choisie
+- le nom de la ville
+- le nom du pays d'appartenance
+
+Veuillez utiliser un composant enfant pour l'affichage 
+des données (images + textes) de la ville.
+
+Option: les données seront obtenues par un service

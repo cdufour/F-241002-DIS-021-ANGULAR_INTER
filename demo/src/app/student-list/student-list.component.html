@@ -1,0 +1,9 @@
+<h3>Student list</h3>
+<p>Nombre de "likes": {{ numLikes }}</p>
+<app-student-card 
+    *ngFor="let student of students"
+    [name]="student.name"
+    [grade]="student.grade"
+    (onLike)="onLike($event)"
+>
+</app-student-card>
