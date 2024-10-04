@@ -1,0 +1,45 @@
+<div>
+    <h4>Enregistrement d'un étudiant</h4>
+
+    <article>{{ feedback }}</article>
+
+    <form (submit)="onSubmit($event)" #form="ngForm">
+
+        <input
+            #name="ngModel" 
+            name="name"
+            type="text" 
+            placeholder="Nom" 
+            required
+            minlength="4"
+            [(ngModel)]="student.name"
+        />
+        <span *ngIf="name.invalid && name.dirty">Nom non valide</span>
+
+        <input 
+            name="grade" 
+            type="number" 
+            placeholder="Note"
+            [(ngModel)]="student.grade" 
+        />
+
+        <button [disabled]="form.invalid">Valider</button>
+
+    </form>
+</div>
+
+<section>
+    <div>{{ student | json }}</div>
+    
+    <div>Nom de l'étudiant "valid" ? => {{ name.valid }}</div>
+    <div>Nom de l'étudiant "invalid" ? => {{ name.invalid }}</div>
+
+    <div>Nom de l'étudiant "dirty" (sale) ? => {{ name.dirty }}</div>
+    <div>Nom de l'étudiant "pristine" (propre) ? => {{ name.pristine }}</div>
+
+    <div>Nom de l'étudiant "touched" ? => {{ name.touched }}</div>
+    <div>Nom de l'étudiant "untouched" ? => {{ name.untouched }}</div>
+
+    <div>Formulaire "valid" ? => {{ form.valid }}</div>
+
+</section>
