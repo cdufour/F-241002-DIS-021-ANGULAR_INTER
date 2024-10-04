@@ -1,8 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Inject } from '@angular/core';
 import { Student } from './students/student';
 import { HttpClient } from '@angular/common/http';
+import { API_URL } from './app.module';
 
-const API = 'http://localhost:3000/students';
+//const API = 'http://localhost:3000/students';
 
 @Injectable({
   providedIn: 'root'
@@ -15,7 +16,10 @@ export class StudentService {
     {name: "Olivier", grade: 12},
   ];
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(
+    private httpClient: HttpClient,
+    @Inject(API_URL) private apiUrl: string
+  ) { }
 
   getStudentsSync(): Student[] {
     return this.students;
@@ -26,6 +30,6 @@ export class StudentService {
     // return fetch(API);
     
     // retourne un observable
-    return this.httpClient.get(API);
+    return this.httpClient.get(this.apiUrl);
   }
 }

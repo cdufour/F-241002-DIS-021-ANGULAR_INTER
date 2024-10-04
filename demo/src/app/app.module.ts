@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { NgModule, InjectionToken } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RootComponent } from './root/root.component';
 import { BrowserModule } from '@angular/platform-browser';
@@ -9,6 +9,8 @@ import { StudentListComponent } from './student-list/student-list.component';
 import { StudentCardComponent } from './student-card/student-card.component';
 import { HttpClientModule } from '@angular/common/http';
 
+export const API_URL = new InjectionToken<string>('API_URL');
+
 @NgModule({
   declarations: [RootComponent, StudentsComponent, ChoiceComponent, StudentListComponent, StudentCardComponent],
   imports: [
@@ -17,6 +19,9 @@ import { HttpClientModule } from '@angular/common/http';
     ExosModule,
     HttpClientModule
   ],
-  bootstrap: [RootComponent]
+  bootstrap: [RootComponent],
+  providers: [
+    { provide: API_URL, useValue: 'http://localhost:3000/students' }
+  ]
 })
 export class AppModule { }
